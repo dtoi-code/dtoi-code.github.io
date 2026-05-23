@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTOI守夜人团队</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --nav-bg: #f8f9fa;
+            --card-bg: #e9ecef;
+            --primary: #007bff;
+            --btn-bg: #007bff;
+            --btn-text: #fff;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --nav-bg: #2d2d2d;
+            --card-bg: #3d3d3d;
+            --primary: #4dabf7;
+            --btn-bg: #4dabf7;
+            --btn-text: #000;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .top-left {
+            position: fixed;
+            top: 5px;
+            left: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 999;
+        }
+
+        .nav {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 999;
+        }
+
+        .nav a {
+            text-decoration: none;
+            font-size: 16px;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .nav a.active {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .theme-switch {
+            width: 50px;
+            height: 24px;
+            background-color: #ccc;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .theme-switch::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: 0.3s;
+        }
+
+        [data-theme="dark"] .theme-switch::after {
+            left: 28px;
+            background-color: #000;
+        }
+
+        .center-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .custom-btn {
+            padding: 12px 24px;
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .custom-btn:hover {
+            opacity: 0.8;
+        }
+
+        .about-card {
+            width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            line-height: 1.8;
+        }
+
+        .about-card h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left">DTOI守夜人团队</div>
+
+    <div class="nav">
+        <a class="active">主页</a>
+        <a onclick="openProject()">项目</a>
+        <button class="theme-switch" id="themeBtn"></button>
+    </div>
+
+    <div class="center-container">
+        <h1 class="main-title">DTOI守夜人团队</h1>
+
+        <div class="btn-container">
+            <button class="custom-btn" onclick="openLuogu()">加入洛谷团队</button>
+            <button class="custom-btn" onclick="openVjudge()">加入vjudge团队</button>
+        </div>
+
+        <div class="about-card">
+            <h3>关于团队</h3>
+            <p>DTOI团队，由naijil2013创建，致力于开发OIer项目</p>
+        </div>
+    </div>
+
+    <div class="footer-text">本网站由DTOI程序员搭建</div>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        const html = document.documentElement;
+        themeBtn.addEventListener('click', () => {
+            html.hasAttribute('data-theme') ? html.removeAttribute('data-theme') : html.setAttribute('data-theme', 'dark');
+        });
+
+        function openLuogu(){window.open('https://www.luogu.com.cn/team/118648','_blank')}
+        function openVjudge(){window.open('https://vjudge.net/group/naijil2013','_blank')}
+        function openProject(){window.location.href = '/project'}
+    </script>
+</body>
+</html>

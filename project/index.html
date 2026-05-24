@@ -170,7 +170,7 @@
             cursor: pointer;
             font-size: 14px;
             width: 100%;
-            white-space: nowrap; /* 强制一行 */
+            white-space: nowrap;
         }
 
         .download-btn:hover {
@@ -186,19 +186,18 @@
             cursor: pointer;
             font-size: 14px;
             width: 100%;
-            white-space: nowrap; /* 强制一行 */
+            white-space: nowrap;
         }
 
         .cloud-btn:hover {
             opacity: 0.8;
         }
 
-        /* 云盘禁用样式 */
         .cloud-btn.old-btn {
             background: var(--gray-btn);
             cursor: not-allowed;
             opacity: 0.8;
-            pointer-events: none; /* 彻底禁止点击 */
+            pointer-events: none;
         }
 
         .cloud-btn.old-btn:hover {
@@ -210,19 +209,13 @@
 <body>
 
     <div class="top-left">DTOI守夜人团队</div>
-
-    <div class="nav">
-        <a onclick="goHome()">主页</a>
-        <a class="active">项目</a>
-        <button class="theme-switch" id="themeBtn"></button>
-    </div>
+    <div class="nav"></div>
 
     <div class="container">
         <h2 class="page-title">团队项目文件库</h2>
 
         <div class="file-list">
 
-            <!-- 新增 HMCL（两个按钮都正常） -->
             <div class="file-item">
                 <div class="file-name">HMCL-3.13.1.exe</div>
                 <div class="file-author">Houyc11</div>
@@ -234,7 +227,6 @@
                 </div>
             </div>
 
-            <!-- 旧文件：洛谷正常，云盘禁用 -->
             <div class="file-item">
                 <div class="file-name">advcpp_3.zip</div>
                 <div class="file-author">politetrex</div>
@@ -370,16 +362,7 @@
         </div>
     </div>
 
-    <script>
-        const themeBtn = document.getElementById('themeBtn');
-        const html = document.documentElement;
-        themeBtn.addEventListener('click', () => {
-            html.hasAttribute('data-theme') ? html.removeAttribute('data-theme') : html.setAttribute('data-theme','dark');
-        });
-
-        function goHome() {
-            window.location.href = 'https://dtoi-code.github.io';
-        }
-    </script>
+    <!-- 统一导航栏JS -->
+    <script src="../nav-config.js"></script>
 </body>
 </html>

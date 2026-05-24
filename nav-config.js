@@ -2,6 +2,7 @@
 const navConfig = [
   { name: "主页", path: "/" },
   { name: "项目", path: "/project/" },
+  { name: "小游戏, path: "/game/" },
   // 你以后新增页面，只需要在这里加一行！
   // { name: "新页面", path: "/新文件夹/" },
 ];

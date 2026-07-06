@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luogu Pro 插件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            font-size: 36px;
+            color: #2d3748;
+            margin-bottom: 40px;
+        }
+        #previewBtn {
+            padding: 14px 40px;
+            font-size: 18px;
+            background-color: #4299e1;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #previewBtn:hover {
+            background-color: #3182ce;
+        }
+        .tip-text {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Luogu Pro插件</h1>
+    <button id="previewBtn">预览代码</button>
+    <p class="tip-text">请先安装篡改猴插件，点击按钮打开新页面后Ctrl+A全选再Ctrl+C复制篡改猴代码</p>
+
+    <script>
+        const btn = document.getElementById('previewBtn');
+        btn.addEventListener('click', () => {
+            // 目标链接
+            const codeUrl = 'https://dt.tt-chen.cc.cd/luogu-pro/code.txt';
+            window.open(codeUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
